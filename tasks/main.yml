@@ -8,7 +8,18 @@
     group: root
     mode: 0755
     validate: '/usr/bin/env sh -n %s'
+  notify: execute rc.local
   tags:
     - configuration
     - rc-local
     - rc-local-init
+
+- name: enable service
+  service:
+    name: rc.local
+    enabled: true
+  when: rc_local_uses_systemd | bool
+  tags:
+    - configuration
+    - rc-local
+    - rc-local-start-enable-service
