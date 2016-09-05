@@ -13,4 +13,8 @@
 #
 # By default this script does nothing.
 
+{% for command in rc_local_commands %}
+{{ command }}
+{% endfor %}
+
 exit 0

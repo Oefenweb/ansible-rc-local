@@ -10,7 +10,7 @@ None
 
 #### Variables
 
-None
+* `rc_local_commands`: [default: `[]`]:
 
 #### Dependencies
 

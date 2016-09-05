@@ -1,2 +1,3 @@
 # defaults file for rc-local
 ---
+rc_local_commands: []
