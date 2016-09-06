@@ -1,0 +1,6 @@
+# handlers file for rc-local
+---
+- name: execute rc.local
+  service:
+    name: rc.local
+    state: started
