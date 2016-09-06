@@ -10,7 +10,7 @@ None
 
 #### Variables
 
-* `rc_local_commands`: [default: `[]`]:
+* `rc_local_commands`: [default: `[]`]: Commands to add to `rc.local`
 
 #### Dependencies
 
@@ -35,6 +35,17 @@ None
   roles:
     - rc-local
   vars:
+    rc_local_commands:
+      - |
+          # transparen hugepage
+          if test -f /sys/kernel/mm/transparent_hugepage/enabled; then
+            echo never > /sys/kernel/mm/transparent_hugepage/enabled;
+          fi
+          if test -f /sys/kernel/mm/transparent_hugepage/defrag; then
+            echo never > /sys/kernel/mm/transparent_hugepage/defrag;
+          fi
+      - |
+          # something else
 ```
 
 #### License
