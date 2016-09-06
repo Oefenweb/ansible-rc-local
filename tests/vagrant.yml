@@ -5,6 +5,8 @@
   sudo: true
   roles:
     - ../../
+  post_tasks:
+    - include: post.yml
   vars:
     rc_local_commands:
       - |
