@@ -18,7 +18,7 @@
   service:
     name: rc.local
     enabled: true
-  when: rc_local_uses_systemd | bool
+  when: ansible_service_mgr == 'systemd'
   tags:
     - configuration
     - rc-local
