@@ -1,6 +1,7 @@
 # meta file for rc-local
 ---
 galaxy_info:
+  role_name: rc-local
   author: Mischa ter Smitten
   company: Oefenweb.nl B.V.
   description: Manages rc-local in Debian-like systems
