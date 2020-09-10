@@ -3,19 +3,10 @@
 - hosts: localhost
   connection: local
   become: true
+  pre_tasks:
+    - name: include vars
+      include_vars: main.yml
   roles:
     - ../../
   post_tasks:
     - include: post.yml
-  vars:
-    rc_local_commands:
-      - |
-          # transparen hugepage
-          if test -f /sys/kernel/mm/transparent_hugepage/enabled; then
-            echo never > /sys/kernel/mm/transparent_hugepage/enabled;
-          fi
-          if test -f /sys/kernel/mm/transparent_hugepage/defrag; then
-            echo never > /sys/kernel/mm/transparent_hugepage/defrag;
-          fi
-      - |
-          # something else
