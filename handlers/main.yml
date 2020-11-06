@@ -2,5 +2,5 @@
 ---
 - name: execute rc.local
   service:
-    name: rc.local
+    name: "{{ rc_local_service_name }}"
     state: started
