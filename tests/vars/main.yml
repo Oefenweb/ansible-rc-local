@@ -1,4 +1,4 @@
-# vars file for rc-local
+# vars file
 ---
 rc_local_commands:
   - |

@@ -1,4 +1,4 @@
-# handlers file for rc-local
+# handlers file
 ---
 - name: execute rc.local
   service:

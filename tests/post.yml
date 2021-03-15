@@ -1,4 +1,4 @@
-# test file for rc-local
+# test file
 ---
 - name: post | check values
   shell: awk 'NR>1 {print $1}' RS=[ FS=] {{ item }}

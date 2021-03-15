@@ -1,4 +1,4 @@
-# tasks file for rc-local
+# tasks file
 ---
 - name: include variables
   include_vars: "{{ item }}"
