@@ -19,20 +19,11 @@
     group: root
     mode: 0755
     validate: '/usr/bin/env sh -n %s'
-  notify: execute rc.local
+  notify: (re)start rc.local
   tags:
     - configuration
     - rc-local
     - rc-local-init
-
-- name: start service
-  service:
-    name: "{{ rc_local_service_name }}"
-    state: "{{ service_default_state | default('started') }}"
-  tags:
-    - configuration
-    - rc-local
-    - rc-local-start-service
 
 - name: enable service
   service:

@@ -3,5 +3,14 @@
 - name: execute rc.local
   service:
     name: "{{ rc_local_service_name }}"
+    state: started
+  listen: (re)start rc.local
+
+- name: restart rc.local
+  service:
+    name: "{{ rc_local_service_name }}"
     state: restarted
-  when: service_default_state | default('started') == 'started'
+  when:
+    - ansible_service_mgr == 'systemd'
+    - service_default_state | default('started') == 'started'
+  listen: (re)start rc.local
