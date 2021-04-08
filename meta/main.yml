@@ -2,7 +2,7 @@
 ---
 galaxy_info:
   namespace: oefenweb
-  role_name: rc-local
+  role_name: rc_local
   author: Mischa ter Smitten
   company: Oefenweb.nl B.V.
   description: Manages rc-local in Debian-like systems
@@ -11,14 +11,11 @@ galaxy_info:
   platforms:
     - name: Ubuntu
       versions:
-        - precise
-        - trusty
         - xenial
         - bionic
         - focal
     - name: Debian
       versions:
-        - wheezy
         - jessie
         - stretch
         - buster
