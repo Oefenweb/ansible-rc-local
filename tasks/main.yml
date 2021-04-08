@@ -25,6 +25,15 @@
     - rc-local
     - rc-local-init
 
+- name: start service
+  service:
+    name: "{{ rc_local_service_name }}"
+    state: "{{ service_default_state | default('started') }}"
+  tags:
+    - configuration
+    - rc-local
+    - rc-local-start-service
+
 - name: enable service
   service:
     name: "{{ rc_local_service_name }}"
@@ -33,4 +42,4 @@
   tags:
     - configuration
     - rc-local
-    - rc-local-start-enable-service
+    - rc-local-enable-service

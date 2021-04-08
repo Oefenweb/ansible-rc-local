@@ -3,4 +3,5 @@
 - name: execute rc.local
   service:
     name: "{{ rc_local_service_name }}"
-    state: started
+    state: restarted
+  when: service_default_state | default('started') == 'started'
