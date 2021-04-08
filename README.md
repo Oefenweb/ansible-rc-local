@@ -1,7 +1,7 @@
 ## rc-local
 
-[![Build Status](https://travis-ci.org/Oefenweb/ansible-rc-local.svg?branch=master)](https://travis-ci.org/Oefenweb/ansible-rc-local)
-[![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-rc--local-blue.svg)](https://galaxy.ansible.com/Oefenweb/rc-local)
+[![CI](https://github.com/Oefenweb/ansible-sysfs/workflows/CI/badge.svg)](https://github.com/Oefenweb/ansible-sysfs/actions?query=workflow%3ACI)
+[![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-rc--local-blue.svg)](https://galaxy.ansible.com/Oefenweb/rc_local)
 
 Manages rc.local in Debian-like systems.
 

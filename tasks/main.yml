@@ -19,7 +19,7 @@
     group: root
     mode: 0755
     validate: '/usr/bin/env sh -n %s'
-  notify: execute rc.local
+  notify: (re)start rc.local
   tags:
     - configuration
     - rc-local
@@ -33,4 +33,4 @@
   tags:
     - configuration
     - rc-local
-    - rc-local-start-enable-service
+    - rc-local-enable-service
