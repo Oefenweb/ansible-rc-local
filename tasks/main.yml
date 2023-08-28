@@ -1,7 +1,7 @@
 # tasks file
 ---
 - name: include variables
-  include_vars: "{{ item }}"
+  ansible.builtin.include_vars: "{{ item }}"
   with_first_found:
     - "_{{ ansible_distribution_release }}.yml"
     - "_{{ ansible_distribution | lower }}.yml"
@@ -12,7 +12,7 @@
     - rc-local-include-variables
 
 - name: update init script
-  template:
+  ansible.builtin.template:
     src: etc/rc.local.j2
     dest: /etc/rc.local
     owner: root
@@ -26,7 +26,7 @@
     - rc-local-init
 
 - name: enable service
-  service:
+  ansible.builtin.service:
     name: "{{ rc_local_service_name }}"
     enabled: true
   when: ansible_service_mgr == 'systemd'

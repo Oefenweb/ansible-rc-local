@@ -1,14 +1,14 @@
 # handlers file
 ---
 - name: execute rc.local
-  service:
+  ansible.builtin.service:
     name: "{{ rc_local_service_name }}"
     state: started
   when: ansible_service_mgr != 'systemd'
   listen: (re)start rc.local
 
 - name: restart rc.local
-  service:
+  ansible.builtin.service:
     name: "{{ rc_local_service_name }}"
     state: restarted
   when: ansible_service_mgr == 'systemd'
