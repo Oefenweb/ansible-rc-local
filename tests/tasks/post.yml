@@ -1,7 +1,7 @@
 # post test file
 ---
 - name: check values
-  shell: >
+  ansible.builtin.shell: >
     awk 'NR>1 {print $1}' RS=[ FS=] {{ item }}
   register: _check_values
   changed_when: false
