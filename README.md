@@ -25,7 +25,7 @@ None
 ---
 - hosts: all
   roles:
-    - rc-local
+    - oefenweb.rc-local
 ```
 
 ##### Advanced
@@ -34,7 +34,7 @@ None
 ---
 - hosts: all
   roles:
-    - rc-local
+    - oefenweb.rc-local
   vars:
     rc_local_commands:
       - |
