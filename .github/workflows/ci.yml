@@ -52,6 +52,7 @@ jobs:
           - distro: ubuntu1604
           - distro: ubuntu1804
           - distro: ubuntu2004
+          - distro: ubuntu2204
 
     steps:
       - name: Check out the codebase
