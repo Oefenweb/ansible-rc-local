@@ -3,8 +3,8 @@
 - name: include variables
   ansible.builtin.include_vars: "{{ item }}"
   with_first_found:
-    - "_{{ ansible_distribution_release }}.yml"
-    - "_{{ ansible_distribution | lower }}.yml"
+    - "_{{ ansible_facts['distribution_release'] }}.yml"
+    - "_{{ ansible_facts['distribution'] | lower }}.yml"
     - _default.yml
   tags:
     - configuration
@@ -17,7 +17,7 @@
     dest: /etc/rc.local
     owner: root
     group: root
-    mode: 0755
+    mode: '0755'
     validate: '/usr/bin/env sh -n %s'
   notify: (re)start rc.local
   tags:
@@ -29,7 +29,7 @@
   ansible.builtin.service:
     name: "{{ rc_local_service_name }}"
     enabled: true
-  when: ansible_service_mgr == 'systemd'
+  when: ansible_facts['service_mgr'] == 'systemd'
   tags:
     - configuration
     - rc-local
